@@ -35,5 +35,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/                # the folder you want to upload (Vite default)
-          server-dir: /public_html/vishful   # must end with a slash
+          server-dir: /   # must end with a slash
           dry-run: false               # set true to test without uploading
