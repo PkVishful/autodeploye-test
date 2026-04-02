@@ -31,7 +31,7 @@ jobs:
       - name: Upload via FTP to GoDaddy
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.vishful.co.in  # replace with your FTP host
+          server: vishful.co.in  # replace with your FTP host
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/                # the folder you want to upload (Vite default)
