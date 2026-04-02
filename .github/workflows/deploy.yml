@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./                # the folder you want to upload
           server-dir: /public_html/vishful   # usually this is your website root
-          dry-run: false               # set true to test without uploading
+          dry-run: true               # set true to test without uploading
