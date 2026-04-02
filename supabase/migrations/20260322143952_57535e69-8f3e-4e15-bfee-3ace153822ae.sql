@@ -1,0 +1,1 @@
+UPDATE tenant_allotments SET staying_status = 'Exited', actual_exit_date = '2024-04-02' WHERE id = 'afd77aad-60e9-486f-8349-4b313bb198be'

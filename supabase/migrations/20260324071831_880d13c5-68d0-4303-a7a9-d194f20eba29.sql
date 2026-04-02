@@ -1,0 +1,1 @@
+UPDATE public.tenant_allotments SET estimated_exit_date = notice_date WHERE notice_date IS NOT NULL;

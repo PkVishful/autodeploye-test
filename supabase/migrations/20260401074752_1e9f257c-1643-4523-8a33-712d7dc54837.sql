@@ -1,0 +1,1 @@
+ALTER TABLE public.owner_contracts ADD COLUMN rent_paid_in_advance boolean DEFAULT false;

@@ -1,0 +1,1 @@
+ALTER TYPE public.bed_type ADD VALUE IF NOT EXISTS 'Executive';

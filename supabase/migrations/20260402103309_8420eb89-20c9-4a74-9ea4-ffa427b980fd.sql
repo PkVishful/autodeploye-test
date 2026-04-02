@@ -1,0 +1,1 @@
+ALTER TABLE properties ADD COLUMN IF NOT EXISTS start_date date;

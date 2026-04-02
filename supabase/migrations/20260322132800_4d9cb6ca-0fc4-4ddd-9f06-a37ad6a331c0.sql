@@ -1,0 +1,1 @@
+ALTER TABLE public.tenant_allotments ADD COLUMN IF NOT EXISTS premium numeric DEFAULT 0;

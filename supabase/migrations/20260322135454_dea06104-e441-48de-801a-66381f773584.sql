@@ -1,0 +1,1 @@
+UPDATE tenant_allotments SET estimated_exit_date = notice_date WHERE notice_date IS NOT NULL AND estimated_exit_date IS DISTINCT FROM notice_date;

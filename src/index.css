@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fluid Typography Scale ─── */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1440;
+  --fluid-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
+  --fluid-sm: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --fluid-base: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
+  --fluid-lg: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+  --fluid-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --fluid-2xl: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  --fluid-3xl: clamp(1.875rem, 1.5rem + 1.5vw, 3rem);
+}
+
+/* ─── PALETTE: Classic Corporate (default light) ─── */
+@layer base {
+  :root,
+  :root[data-palette="corporate"] {
+    --background: 30 15% 97%;
+    --foreground: 280 20% 15%;
+    --card: 30 10% 99%;
+    --card-foreground: 280 20% 15%;
+    --popover: 30 10% 99%;
+    --popover-foreground: 280 20% 15%;
+    --primary: 272 50% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 15% 92%;
+    --secondary-foreground: 280 20% 18%;
+    --muted: 330 12% 93%;
+    --muted-foreground: 280 8% 46%;
+    --accent: 28 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 330 10% 88%;
+    --input: 330 10% 88%;
+    --ring: 272 50% 38%;
+    --radius: 0.625rem;
+    --success: 152 69% 31%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 58%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 336 18% 80%;
+    --sidebar-foreground: 280 20% 20%;
+    --sidebar-primary: 272 50% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 336 15% 76%;
+    --sidebar-accent-foreground: 280 20% 15%;
+    --sidebar-border: 336 12% 75%;
+    --sidebar-ring: 272 50% 38%;
+
+    --chart-1: 272 50% 38%;
+    --chart-2: 28 85% 55%;
+    --chart-3: 30 85% 58%;
+    --chart-4: 199 89% 48%;
+    --chart-5: 0 72% 51%;
+
+    --glass-bg: 30 10% 99% / 0.75;
+    --glass-border: 330 10% 88% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 274 20% 94%;
+    --table-row-alt-bg: 330 10% 97%;
+    --info-panel-bg: 274 15% 95%;
+    --card-1-bg: 274 22% 96%;
+    --card-2-bg: 25 25% 96%;
+    --card-3-bg: 152 20% 96%;
+    --card-4-bg: 199 25% 96%;
+  }
+
+  /* Dark */
+  .dark,
+  .dark[data-palette="corporate"] {
+    --background: 280 22% 8%;
+    --foreground: 330 15% 94%;
+    --card: 280 20% 11%;
+    --card-foreground: 330 15% 94%;
+    --popover: 280 20% 11%;
+    --popover-foreground: 330 15% 94%;
+    --primary: 272 55% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 14% 16%;
+    --secondary-foreground: 330 15% 90%;
+    --muted: 280 14% 16%;
+    --muted-foreground: 330 8% 58%;
+    --accent: 28 85% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 280 12% 18%;
+    --input: 280 12% 18%;
+    --ring: 272 55% 52%;
+    --success: 152 69% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 55%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 280 22% 10%;
+    --sidebar-foreground: 330 12% 78%;
+    --sidebar-primary: 272 55% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 14% 14%;
+    --sidebar-accent-foreground: 330 12% 78%;
+    --sidebar-border: 280 12% 18%;
+    --sidebar-ring: 272 55% 52%;
+
+    --chart-1: 272 55% 58%;
+    --chart-2: 28 85% 55%;
+    --chart-3: 30 85% 58%;
+    --chart-4: 199 89% 58%;
+    --chart-5: 0 72% 58%;
+
+    --glass-bg: 280 22% 8% / 0.8;
+    --glass-border: 280 12% 22% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 280 18% 14%;
+    --table-row-alt-bg: 280 16% 10%;
+    --info-panel-bg: 280 16% 12%;
+    --card-1-bg: 274 18% 13%;
+    --card-2-bg: 25 14% 13%;
+    --card-3-bg: 152 14% 12%;
+    --card-4-bg: 199 14% 13%;
+  }
+
+  /* ─── PALETTE: Modern Midnight ─── */
+  [data-palette="midnight"] {
+    --background: 30 25% 96%;
+    --foreground: 30 10% 12%;
+    --card: 30 20% 98%;
+    --card-foreground: 30 10% 12%;
+    --popover: 30 20% 98%;
+    --popover-foreground: 30 10% 12%;
+    --primary: 274 44% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 12% 92%;
+    --secondary-foreground: 30 10% 18%;
+    --muted: 30 12% 92%;
+    --muted-foreground: 30 8% 48%;
+    --accent: 25 78% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 87%;
+    --input: 30 10% 87%;
+    --ring: 274 44% 42%;
+    --success: 160 72% 34%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 58%;
+    --warning-foreground: 0 0% 100%;
+    --info: 210 78% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 336 18% 80%;
+    --sidebar-foreground: 30 10% 28%;
+    --sidebar-primary: 274 44% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 336 15% 76%;
+    --sidebar-accent-foreground: 30 10% 18%;
+    --sidebar-border: 336 12% 75%;
+    --sidebar-ring: 274 44% 42%;
+
+    --chart-1: 274 44% 42%;
+    --chart-2: 25 78% 58%;
+    --chart-3: 30 85% 58%;
+    --chart-4: 210 78% 52%;
+    --chart-5: 0 72% 51%;
+
+    --glass-bg: 30 20% 98% / 0.75;
+    --glass-border: 30 10% 87% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 274 18% 93%;
+    --table-row-alt-bg: 30 15% 96%;
+    --info-panel-bg: 30 18% 94%;
+    --card-1-bg: 274 18% 95%;
+    --card-2-bg: 30 20% 95%;
+    --card-3-bg: 160 18% 95%;
+    --card-4-bg: 210 18% 95%;
+  }
+
+  .dark[data-palette="midnight"] {
+    --background: 280 22% 8%;
+    --foreground: 330 10% 92%;
+    --card: 280 20% 11%;
+    --card-foreground: 330 10% 92%;
+    --popover: 280 20% 11%;
+    --popover-foreground: 330 10% 92%;
+    --primary: 274 50% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 14% 16%;
+    --secondary-foreground: 330 10% 88%;
+    --muted: 280 14% 16%;
+    --muted-foreground: 330 8% 55%;
+    --accent: 25 78% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 280 12% 19%;
+    --input: 280 12% 19%;
+    --ring: 274 50% 55%;
+    --success: 160 72% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 55%;
+    --warning-foreground: 0 0% 100%;
+    --info: 210 78% 58%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 280 22% 10%;
+    --sidebar-foreground: 330 10% 76%;
+    --sidebar-primary: 274 50% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 14% 13%;
+    --sidebar-accent-foreground: 330 10% 76%;
+    --sidebar-border: 280 12% 19%;
+    --sidebar-ring: 274 50% 55%;
+
+    --chart-1: 274 50% 65%;
+    --chart-2: 25 78% 58%;
+    --chart-3: 30 85% 56%;
+    --chart-4: 210 78% 60%;
+    --chart-5: 0 72% 58%;
+
+    --glass-bg: 280 22% 8% / 0.8;
+    --glass-border: 280 12% 22% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 280 16% 14%;
+    --table-row-alt-bg: 280 14% 10%;
+    --info-panel-bg: 280 14% 12%;
+    --card-1-bg: 274 16% 13%;
+    --card-2-bg: 30 12% 12%;
+    --card-3-bg: 160 12% 12%;
+    --card-4-bg: 210 12% 13%;
+  }
+
+  /* ─── PALETTE: Forest Professional ─── */
+  [data-palette="forest"] {
+    --background: 140 15% 96%;
+    --foreground: 150 20% 10%;
+    --card: 140 12% 98%;
+    --card-foreground: 150 20% 10%;
+    --popover: 140 12% 98%;
+    --popover-foreground: 150 20% 10%;
+    --primary: 158 64% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 140 10% 91%;
+    --secondary-foreground: 150 16% 18%;
+    --muted: 140 10% 91%;
+    --muted-foreground: 150 8% 46%;
+    --accent: 25 78% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 140 8% 86%;
+    --input: 140 8% 86%;
+    --ring: 158 64% 32%;
+    --success: 152 69% 31%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 58%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 78% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 140 12% 94%;
+    --sidebar-foreground: 150 16% 26%;
+    --sidebar-primary: 158 64% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 10% 89%;
+    --sidebar-accent-foreground: 150 16% 18%;
+    --sidebar-border: 140 8% 86%;
+    --sidebar-ring: 158 64% 32%;
+
+    --chart-1: 158 64% 32%;
+    --chart-2: 120 45% 40%;
+    --chart-3: 30 85% 58%;
+    --chart-4: 199 78% 48%;
+    --chart-5: 0 72% 51%;
+
+    --glass-bg: 140 12% 98% / 0.75;
+    --glass-border: 140 8% 86% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 158 18% 93%;
+    --table-row-alt-bg: 140 10% 97%;
+    --info-panel-bg: 140 14% 94%;
+    --card-1-bg: 158 18% 95%;
+    --card-2-bg: 120 14% 95%;
+    --card-3-bg: 30 18% 96%;
+    --card-4-bg: 199 16% 95%;
+  }
+
+  .dark[data-palette="forest"] {
+    --background: 155 22% 7%;
+    --foreground: 140 12% 92%;
+    --card: 155 18% 10%;
+    --card-foreground: 140 12% 92%;
+    --popover: 155 18% 10%;
+    --popover-foreground: 140 12% 92%;
+    --primary: 158 64% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 155 12% 15%;
+    --secondary-foreground: 140 12% 88%;
+    --muted: 155 12% 15%;
+    --muted-foreground: 150 8% 54%;
+    --accent: 25 78% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 155 10% 18%;
+    --input: 155 10% 18%;
+    --ring: 158 64% 42%;
+    --success: 152 69% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 85% 55%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 78% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 155 24% 5.5%;
+    --sidebar-foreground: 140 12% 76%;
+    --sidebar-primary: 158 64% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 155 12% 12%;
+    --sidebar-accent-foreground: 140 12% 76%;
+    --sidebar-border: 155 10% 18%;
+    --sidebar-ring: 158 64% 42%;
+
+    --chart-1: 158 64% 48%;
+    --chart-2: 120 45% 48%;
+    --chart-3: 30 85% 58%;
+    --chart-4: 199 78% 58%;
+    --chart-5: 0 72% 58%;
+
+    --glass-bg: 155 22% 7% / 0.8;
+    --glass-border: 155 10% 22% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 155 16% 13%;
+    --table-row-alt-bg: 155 14% 9%;
+    --info-panel-bg: 155 14% 11%;
+    --card-1-bg: 158 14% 12%;
+    --card-2-bg: 120 10% 12%;
+    --card-3-bg: 30 10% 12%;
+    --card-4-bg: 199 10% 12%;
+  }
+
+  /* ─── PALETTE: Ocean ─── */
+  [data-palette="ocean"] {
+    --background: 200 20% 97%;
+    --foreground: 210 25% 12%;
+    --card: 200 15% 99%;
+    --card-foreground: 210 25% 12%;
+    --popover: 200 15% 99%;
+    --popover-foreground: 210 25% 12%;
+    --primary: 205 78% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 12% 92%;
+    --secondary-foreground: 210 18% 18%;
+    --muted: 200 12% 92%;
+    --muted-foreground: 210 8% 46%;
+    --accent: 180 55% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 10% 87%;
+    --input: 200 10% 87%;
+    --ring: 205 78% 40%;
+    --radius: 0.625rem;
+    --success: 160 65% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 205 22% 88%;
+    --sidebar-foreground: 210 20% 22%;
+    --sidebar-primary: 205 78% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 18% 84%;
+    --sidebar-accent-foreground: 210 18% 18%;
+    --sidebar-border: 205 14% 82%;
+    --sidebar-ring: 205 78% 40%;
+
+    --chart-1: 205 78% 40%;
+    --chart-2: 180 55% 42%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 160 65% 35%;
+    --chart-5: 0 72% 51%;
+
+    --glass-bg: 200 15% 99% / 0.75;
+    --glass-border: 200 10% 87% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 205 20% 93%;
+    --table-row-alt-bg: 200 12% 97%;
+    --info-panel-bg: 200 16% 94%;
+    --card-1-bg: 205 20% 95%;
+    --card-2-bg: 180 16% 95%;
+    --card-3-bg: 38 18% 96%;
+    --card-4-bg: 160 16% 95%;
+  }
+
+  .dark[data-palette="ocean"] {
+    --background: 210 28% 7%;
+    --foreground: 200 12% 92%;
+    --card: 210 24% 10%;
+    --card-foreground: 200 12% 92%;
+    --popover: 210 24% 10%;
+    --popover-foreground: 200 12% 92%;
+    --primary: 205 72% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 14% 16%;
+    --secondary-foreground: 200 12% 88%;
+    --muted: 210 14% 16%;
+    --muted-foreground: 200 8% 55%;
+    --accent: 180 50% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 12% 18%;
+    --input: 210 12% 18%;
+    --ring: 205 72% 52%;
+    --success: 160 65% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 52%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 210 28% 9%;
+    --sidebar-foreground: 200 12% 76%;
+    --sidebar-primary: 205 72% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 14% 13%;
+    --sidebar-accent-foreground: 200 12% 76%;
+    --sidebar-border: 210 12% 18%;
+    --sidebar-ring: 205 72% 52%;
+
+    --chart-1: 205 72% 58%;
+    --chart-2: 180 50% 50%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 160 65% 48%;
+    --chart-5: 0 72% 58%;
+
+    --glass-bg: 210 28% 7% / 0.8;
+    --glass-border: 210 12% 22% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 210 20% 14%;
+    --table-row-alt-bg: 210 18% 9%;
+    --info-panel-bg: 210 18% 11%;
+    --card-1-bg: 205 16% 13%;
+    --card-2-bg: 180 12% 12%;
+    --card-3-bg: 38 10% 12%;
+    --card-4-bg: 160 10% 12%;
+  }
+
+  /* ─── PALETTE: Sunset ─── */
+  [data-palette="sunset"] {
+    --background: 25 20% 97%;
+    --foreground: 15 25% 12%;
+    --card: 25 15% 99%;
+    --card-foreground: 15 25% 12%;
+    --popover: 25 15% 99%;
+    --popover-foreground: 15 25% 12%;
+    --primary: 15 85% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 12% 92%;
+    --secondary-foreground: 15 18% 18%;
+    --muted: 25 12% 92%;
+    --muted-foreground: 15 8% 46%;
+    --accent: 340 65% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 25 10% 87%;
+    --input: 25 10% 87%;
+    --ring: 15 85% 48%;
+    --radius: 0.625rem;
+    --success: 152 65% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 95% 52%;
+    --warning-foreground: 0 0% 10%;
+    --info: 199 78% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 15 25% 88%;
+    --sidebar-foreground: 15 20% 22%;
+    --sidebar-primary: 15 85% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 20% 84%;
+    --sidebar-accent-foreground: 15 18% 18%;
+    --sidebar-border: 15 16% 82%;
+    --sidebar-ring: 15 85% 48%;
+
+    --chart-1: 15 85% 48%;
+    --chart-2: 340 65% 50%;
+    --chart-3: 45 95% 52%;
+    --chart-4: 199 78% 48%;
+    --chart-5: 152 65% 35%;
+
+    --glass-bg: 25 15% 99% / 0.75;
+    --glass-border: 25 10% 87% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 15 22% 93%;
+    --table-row-alt-bg: 25 12% 97%;
+    --info-panel-bg: 25 16% 94%;
+    --card-1-bg: 15 22% 95%;
+    --card-2-bg: 340 16% 96%;
+    --card-3-bg: 45 18% 96%;
+    --card-4-bg: 199 16% 95%;
+  }
+
+  .dark[data-palette="sunset"] {
+    --background: 15 25% 7%;
+    --foreground: 25 12% 92%;
+    --card: 15 20% 10%;
+    --card-foreground: 25 12% 92%;
+    --popover: 15 20% 10%;
+    --popover-foreground: 25 12% 92%;
+    --primary: 15 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 15 14% 16%;
+    --secondary-foreground: 25 12% 88%;
+    --muted: 15 14% 16%;
+    --muted-foreground: 15 8% 55%;
+    --accent: 340 60% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 15 12% 18%;
+    --input: 15 12% 18%;
+    --ring: 15 80% 55%;
+    --success: 152 65% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 95% 55%;
+    --warning-foreground: 0 0% 10%;
+    --info: 199 78% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 15 25% 9%;
+    --sidebar-foreground: 25 12% 76%;
+    --sidebar-primary: 15 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 14% 13%;
+    --sidebar-accent-foreground: 25 12% 76%;
+    --sidebar-border: 15 12% 18%;
+    --sidebar-ring: 15 80% 55%;
+
+    --chart-1: 15 80% 58%;
+    --chart-2: 340 60% 55%;
+    --chart-3: 45 95% 58%;
+    --chart-4: 199 78% 58%;
+    --chart-5: 152 65% 48%;
+
+    --glass-bg: 15 25% 7% / 0.8;
+    --glass-border: 15 12% 22% / 0.4;
+
+    /* Segment colors */
+    --table-header-bg: 15 18% 14%;
+    --table-row-alt-bg: 15 16% 9%;
+    --info-panel-bg: 15 16% 11%;
+    --card-1-bg: 15 16% 13%;
+    --card-2-bg: 340 10% 12%;
+    --card-3-bg: 45 10% 12%;
+    --card-4-bg: 199 10% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    font-size: var(--fluid-base);
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: var(--fluid-2xl); line-height: 1.2; }
+  h2 { font-size: var(--fluid-xl); line-height: 1.25; }
+  h3 { font-size: var(--fluid-lg); line-height: 1.3; }
+  p, li, td { font-size: var(--fluid-base); }
+  .text-xs { font-size: var(--fluid-xs) !important; }
+  .text-sm { font-size: var(--fluid-sm) !important; }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  .glass-strong {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Mobile bottom-bar safe area */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE tenant_allotments ADD COLUMN IF NOT EXISTS processing_fee numeric DEFAULT 0;

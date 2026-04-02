@@ -1,0 +1,1 @@
+ALTER TABLE public.invoices ADD COLUMN IF NOT EXISTS allotment_id uuid REFERENCES public.tenant_allotments(id) ON DELETE SET NULL;

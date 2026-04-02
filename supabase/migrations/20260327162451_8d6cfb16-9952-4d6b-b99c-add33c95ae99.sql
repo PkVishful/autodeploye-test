@@ -1,0 +1,2 @@
+ALTER TABLE invoices ADD COLUMN IF NOT EXISTS amount_paid numeric DEFAULT 0;
+ALTER TABLE invoices ADD COLUMN IF NOT EXISTS balance numeric DEFAULT 0;

@@ -1,0 +1,1 @@
+ALTER TABLE tenant_allotments ADD COLUMN expected_stay_days integer DEFAULT NULL;

@@ -1,0 +1,22 @@
+project_id = "slljsigvfaxngpjaajjd"
+
+[functions.auth-otp]
+verify_jwt = false
+
+[functions.ticket-analytics]
+verify_jwt = false
+
+[functions.scan-invoice]
+verify_jwt = false
+
+[functions.ai-diagnosis]
+verify_jwt = false
+
+[functions.generate-maintenance-tickets]
+verify_jwt = false
+
+[functions.ticket-notifications]
+verify_jwt = false
+
+[functions.scan-meter-reading]
+verify_jwt = false
